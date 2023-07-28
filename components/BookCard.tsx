@@ -4,7 +4,7 @@ type Props = { title: string; isbn: ISBN; authors: string[]; cover: string, onCl
 export default function BookCard({ title, authors, cover, isbn, onClick }: Props) {
   return (
     <div className="transition ease-in-out hover:scale-110" onClick={onClick}>
-      <img src={cover} alt="Book cover" className="object-cover" />
+      <img src={cover} alt="Book cover" className="object-cover max-h-48 rounded-md" />
     </div>
   );
 }
