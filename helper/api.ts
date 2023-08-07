@@ -17,8 +17,9 @@ async function getBook(isbn: ISBN): Promise<BookInfo> {
     `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`
   );
   const json = await response.json();
-  const item = json.items.pop();
+  const item = json.items[0];
   const info = item.volumeInfo;
+  console.log(JSON.stringify(info, null, 2));
 
   const result: BookInfo = {
     title: info.title,
